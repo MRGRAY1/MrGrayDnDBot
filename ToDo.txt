@@ -1,0 +1,15 @@
+ToDo List:
+Basic Class Description
+Basic Race Description
+Background generator
+
+
+
+Done:
+Roll one dice
+Roll Different dice
+Role multiple dice
+Role sets of dice
+Drop lowest dice in sets
+Adv/Dis
+Name Generator
