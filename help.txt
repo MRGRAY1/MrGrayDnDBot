@@ -1,0 +1,22 @@
+Welcome to MrGrayDiceRoller Bot
+This bot is used to roll Dice
+The following commands are listed below:
+Must include '&' before each command
+
+-to get a greeting
+&hello
+
+-show this page
+&help
+
+-Roll a group of Dice
+&4d6
+
+-Roll an array of Dice
+&6 4d6
+
+-Roll a single dice
+&d20
+
+-Roll a set of dice and drop the lowest rolled
+&4d6 dl
