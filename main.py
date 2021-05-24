@@ -197,9 +197,38 @@ def AdvDis(advantage, cmd):
     return final
 ###/AdvDis
 
+###get Boulder Parchment Shears
+def getBPS(cmd, user):
+    player1 = 0
+    player2 = 0
+    choices = ["Boulder", "Parchment", "Shears"]
+    player2 = random.randint(1,99)
+    player2 = player2 % 3
+    final = ""
+
+    if cmd == "b" or cmd == "boulder":
+        player1 = 0
+    elif cmd == "p" or cmd == "parchment":
+        player1 = 1
+    elif cmd == "s" or cmd == "shears":
+        player1 = 2
+    print (player1)
+    print (player2)
+    final += (f"\n" + user + " played: " + choices[player1])
+    final += (f"\nBot played: " + choices[player2])
+    if player1 == player2:
+        final += (f"\n" + user + " and Bot Tied. Try Again.")
+    elif (player1 == 0 and player2 == 1) or (player1 == 1 and player2 == 2) or (player1 == 2 and player2 == 0):
+        final += (f"\n" + user + " Lost! Try Again.")
+    elif (player1 == 0 and player2 == 2) or (player1 == 1 and player2 == 0) or (player1 == 2 and player2 == 1):
+        final += (f"\n" + user + " Won! Good Job!")
+
+    return final
+###getBPS()
+
 #### Main get command function
 async def get_cmd(message, user):
-    cmd = message.content.lower().replace("&", "")
+    cmd = message.content.lower().replace(".", "")
     final = " "
     error1 = "Unknown input. Do better. -Bot"
     fail = False
@@ -208,7 +237,7 @@ async def get_cmd(message, user):
         fail = True
     
     #(dis\s*[\-\+]\s*\d+)|(adv\s*[\-\+]\s*\d)|(dis)|(adv)
-    if (re.match("\d+\s+\d+d\d+\s+dl", cmd) or re.match("\d+\s+\d+d\d+", cmd) or re.match("\d+d\d+\sdl", cmd) or re.match("\d+d\d+", cmd) or re.match("d\d+", cmd)):
+    if (re.match("\d+\s+\d+d\d+\s+dl", cmd) or re.match("\d+\s+\d+d\d+", cmd) or re.match("\d+d\d+\sdl", cmd) or re.match("\d+d\d+", cmd) or re.match("d\d+", cmd) or re.match("\d+\s+d\d", cmd)):
         final = get_dice(cmd, user)
     elif cmd == "dis" or re.match("dis\s*[\-\+]\s*\d+", cmd):
         final = AdvDis(False, cmd)
@@ -222,15 +251,17 @@ async def get_cmd(message, user):
         final = name_gen_f()
     elif cmd == "gennamem":
         final = name_gen_m()
+    elif (cmd == "b" or cmd == "p" or cmd == "s" or cmd == "boulder" or cmd == "parchment" or cmd == "shears"):
+        final = getBPS(cmd, user)
     else:
         final = error1
 
     await message.channel.send(final)
 ###/get_cmd
-
 load_dotenv(".env")
 client = discord.Client()
 botkey = os.getenv("BOTKEY")
+print (botkey)
 
 @client.event
 async def on_ready():
@@ -241,7 +272,7 @@ async def on_message(message):
     user = message.author.name
     if message.author == client.user:
         return
-    elif message.content.startswith("&"):
+    elif message.content.startswith("."):
         #await message.channel.send(get_cmd(message, user))
         await get_cmd(message, user)
 

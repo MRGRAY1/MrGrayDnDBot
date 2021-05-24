@@ -1,22 +1,32 @@
 Welcome to MrGrayDiceRoller Bot
 This bot is used to roll Dice
 The following commands are listed below:
-Must include '&' before each command
+Must include '.' before each command
 
 -to get a greeting
-&hello
+.hello
 
 -show this page
-&help
+.help
 
 -Roll a group of Dice
-&4d6
+.4d6
 
 -Roll an array of Dice
-&6 4d6
+.6 4d6
+.6 d6
 
 -Roll a single dice
-&d20
+.d20
 
 -Roll a set of dice and drop the lowest rolled
-&4d6 dl
+.4d6 dl
+
+-Roll with Advantage or Disadvantage
+.ADV +/- 4
+.DIS +/- 4
+
+-Play Boulder, Parchment, Shears
+.Boulder or .B
+.Parchment or .P
+.Shears or .S
