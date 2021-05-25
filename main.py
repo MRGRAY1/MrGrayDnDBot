@@ -229,7 +229,7 @@ def getBPS(cmd, user):
 #### Main get command function
 async def get_cmd(message, user):
     cmd = message.content.lower().replace(".", "")
-    final = " "
+    final = ""
     error1 = "Unknown input. Do better. -Bot"
     fail = False
 
@@ -253,10 +253,14 @@ async def get_cmd(message, user):
         final = name_gen_m()
     elif (cmd == "b" or cmd == "p" or cmd == "s" or cmd == "boulder" or cmd == "parchment" or cmd == "shears"):
         final = getBPS(cmd, user)
+    elif cmd == "races":
+        await message.channel.send("Races 1:", file=discord.File("Races/Races1.txt"))
+        await message.channel.send("Races 2:", file=discord.File("Races/Races2.txt"))
     else:
         final = error1
 
-    await message.channel.send(final)
+    if final != "":
+        await message.channel.send(final)
 ###/get_cmd
 load_dotenv(".env")
 client = discord.Client()
