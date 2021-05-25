@@ -26,7 +26,17 @@ Must include '.' before each command
 .ADV +/- 4
 .DIS +/- 4
 
+Get list of classes
+.Class
+
+-Get Class and Subclass Decriptions*
+Just type . then the class
+.Barbarian
+
 -Play Boulder, Parchment, Shears
 .Boulder or .B
 .Parchment or .P
 .Shears or .S
+
+*Credit for descriptions from the following website:
+https://www.tribality.com/2019/01/08/brief-description-of-5e-classes-and-subclasses-ideal-to-show-to-your-players/
