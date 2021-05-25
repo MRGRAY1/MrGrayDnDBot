@@ -118,7 +118,7 @@ def get_dice(cmd, user):
 ####Name Gen Male
 def name_gen_m():
     rand_name = ""
-    with open('male_names.txt', 'r') as file:
+    with open('Names/male_names.txt', 'r') as file:
         names = file.read().split("\n")
     rand_name = names[random.randint(0, len(names) - 1)]
     print(rand_name)
@@ -128,7 +128,7 @@ def name_gen_m():
 ####Name Gen Female
 def name_gen_f():
     rand_name = ""
-    with open('female_names.txt', 'r') as file:
+    with open('Names/female_names.txt', 'r') as file:
         names = file.read().split("\n")
     rand_name = names[random.randint(0, len(names) - 1)]
     print(rand_name)
@@ -226,12 +226,55 @@ def getBPS(cmd, user):
     return final
 ###getBPS()
 
+###Class Descriptions
+def getClass():
+    with open("Classes/classes.txt", 'r') as file:
+        data = file.read()
+    final = "Dungeons and Dragons Classes:\n"
+    data = "```\n" + data + "\n```"
+    final += data
+    return final
+###getClass()
+
+###Class Decriptions
+async def getClassDesc(cl, message):
+    if cl == "barbarian":
+        await message.channel.send("Barbarian:", file=discord.File("Classes/Barbarian.txt"))
+    elif cl == "artificer":
+        await message.channel.send("Artificer:", file=discord.File("Classes/Artificer.txt"))
+    elif cl == "bard":
+        await message.channel.send("Bard:", file=discord.File("Classes/Bard.txt"))
+    elif cl == "cleric":
+        await message.channel.send("Cleric:", file=discord.File("Classes/Cleric.txt"))
+    elif cl == "druid":
+        await message.channel.send("Druid:", file=discord.File("Classes/Druid.txt"))
+    elif cl == "fighter":
+        await message.channel.send("Fighter:", file=discord.File("Classes/Fighter.txt"))
+    elif cl == "monk":
+        await message.channel.send("Monk:", file=discord.File("Classes/Monk.txt"))
+    elif cl == "paladin":
+        await message.channel.send("Paladin:", file=discord.File("Classes/Paladin.txt"))
+    elif cl == "ranger":
+        await message.channel.send("Ranger:", file=discord.File("Classes/Ranger.txt"))
+    elif cl == "rogue":
+        await message.channel.send("Rogue:", file=discord.File("Classes/Rogue.txt"))
+    elif cl == "sorcerer":
+        await message.channel.send("Sorcerer:", file=discord.File("Classes/Sorcerer.txt"))
+    elif cl == "warlock":
+        await message.channel.send("Warlock:", file=discord.File("Classes/Warlock.txt"))
+    elif cl == "wizard":
+        await message.channel.send("Wizard:", file=discord.File("Classes/Wizard.txt"))
+###getClassDesc()
+
+
+
 #### Main get command function
 async def get_cmd(message, user):
     cmd = message.content.lower().replace(".", "")
-    final = " "
+    final = ""
     error1 = "Unknown input. Do better. -Bot"
     fail = False
+    
 
     if len(cmd) < 1:
         fail = True
@@ -253,11 +296,23 @@ async def get_cmd(message, user):
         final = name_gen_m()
     elif (cmd == "b" or cmd == "p" or cmd == "s" or cmd == "boulder" or cmd == "parchment" or cmd == "shears"):
         final = getBPS(cmd, user)
+    elif cmd == "races":
+        await message.channel.send("Races 1:", file=discord.File("Races/Races1.txt"))
+        await message.channel.send("Races 2:", file=discord.File("Races/Races2.txt"))
+    elif cmd == "class":
+        final = getClass()
+    elif (cmd =="barbarian" or cmd == "artificer" or cmd == "bard" or cmd == "cleric" or cmd == "druid" or
+          cmd =="fighter" or cmd == "monk" or cmd =="paladin" or cmd == "ranger" or cmd == "rogue" or
+          cmd =="sorcerer" or cmd == "warlock" or cmd == "wizard"):
+        await getClassDesc(cmd, message)
     else:
         final = error1
 
-    await message.channel.send(final)
+    if final != "":
+        await message.channel.send(final)
 ###/get_cmd
+
+
 load_dotenv(".env")
 client = discord.Client()
 botkey = os.getenv("BOTKEY")
