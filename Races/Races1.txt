@@ -1,0 +1,71 @@
+Dragonborn (Player's Handbook)
+Str +2
+Cha +1
+Descendants of dragons, these draconic humanoids live in clans who they value more than their life itself. 
+Depending on their color, they get a breath attack of a specific type, as well as resistance to that same type of damage in combat. 
+They tend to be as strong as they are charismatic, just like their fellow ancestors. Even though they are covered in scales, they lack the tail and wings that make dragons so characteristic.
+
+Dwarf (Player's Handbook)
+Con +2
+Stout, short and hardworking. Those might be the best words to describe a dwarf. Having their race forged by the god Moradin, they were taught of the benefits of hard labor, perfection in their works, and the importance of their clans. Dwarves live their long lives with a spirit of good and justice, that may only be corrupted by greed. Their sturdiness allows them to be more resistant than other classes in combat as well as resist poison. They tend to vary depending of the place they are from:
+
+Hill Dwarf (Player's Handbook)
+Wis+1
+Wiser than their mountain siblings, they also tend to be even more sturdy than them, meaning they are able to stand more hits before falling in combat.
+
+Mountain Dwarf (Player's Handbook)
+Str+2
+The mountain and the labor in there has made them stronger. Their skin tends to be lighter toned as well as their stature a bit higher.
+
+Duergar (Mordenkainen's Tome of Foes)
+Str+1
+Greatly altered by the mind flayers, duergar distance themselves from typical dwarves in their traditions. They value hard work over any other thing. Due to their mental modifications, they are able to use certain psionic powers.
+
+Elf (Player's Handbook)
+Dex+2
+Elves are magical and gracious beings, as well as very close to being eternal. They develop many different attitudes during their life. When young (young being up to 100 years old) they have an adventurous and curious way of thought, making them go for adventures. By the time they reach adulthood their personalities change and become much more peaceful, but don't discard the idea of going exploring until they become elders. They make for excellent artists and tend to be quite chaotic when it comes to laws. Last but not least, they don't sleep but enter trances for 4 hours a day in which they remain semiconscious. If you are playing an elf, choose between the following subraces:
+
+Eladrin (Mordenkainen's Tome of Foes)
+Cha+1
+Eladrin are beings from the Feywild that look closer to how Corellon wanted the elves to look like. They can alter their looks in the same way seasons do. Depending on which season they choose, their abilities will be altered.
+
+High Elf (Player's Handbook)
+Int+1
+High elves are more studious and value art in a greater way than the other subraces. In addition, they master both longswords and shortswords, as well as shortbows and longbows.
+
+Sea Elf (Mordenkainen's Tome of Foes)
+Con+1
+Sea elves come from the sea and have big communities in there. They are able to breath both air and water, and can communicate with sea creatures in a similar way Aquaman does.
+
+Shadar-Kai (Mordenkainen's Tome of Foes)
+Con+1
+Shadar-kai are elves from the Shadowfell. They normally lack emotions and try to embrace strong emotions to stay alive, such as pain. Moreover, they can teleport up to 30ft becoming resistance to any damage until the end of the next turn.
+
+Wood Elf (Player's Handbook)
+Wis+1
+Their intuition and keen senses are found to be the best among all elves, as well as their speed. Their training with weapons is similar to their high elves siblings, making them proficient in the use of longswords, shortswords, shortbows and longbows.
+
+Dark Elf (Drow) (Player's Handbook)
+Cha+1
+Drows were banished from the surface world for betraying Corellon, the elven god. That developed a hate from them towards the other elves. However, a very low number are indifferent about the quarrel and decide to go back to the surface in search for adventure. They are normally very charismatic and can master drow magic.
+
+Gnome (Player's Handbook)
+Int+2
+Gnomes are weird super positive beings. Their spirits shine even in the darkest nights. Great inventors, pranksters, and even better intellectuals. Living away from other communities they tend to live pretty normal lives in their about 500 years. However, just like halflings, curiosity is something that every one of them carries, as well as their impulsive behavior, creating excellent and many adventurers out of them.
+
+Forest Gnome (Player's Handbook)
+Dex+1
+They stealthily move through the forest, creating illusions to trick whoever gets close. Their affinity with animals let them communicate simple ideas to these beasts.
+
+Rock Gnome (Player's Handbook)
+Con+1
+Rock gnomes are known as the best tinkerers. These hardy beings can create little gadgets or things with a specific purpose, to be used for commodity or to maybe get them out of trouble.
+
+Deep Gnome (Mordenkainen's Tome of Foes)
+Dex+1
+Gnomes of this kind aren't frequently seen in the surface world, and even if they were there, their ability to easily camouflage with rocks would make them invisible at sight.
+
+Half-Elf (Player's Handbook)
+Cha+2
+Two abilities+1
+These beings combine the best parts of elves and humans, or so they say. They don't really belong in either of both worlds, having to decide the community they find themselves more identified with. That's the reason why they work excellently as ambassadors or wander off feeling excluded from all places, sometimes in the search for weird adventurers with whom they can find a sense of belonging.

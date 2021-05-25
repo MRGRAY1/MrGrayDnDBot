@@ -1,0 +1,74 @@
+Halfling (Player's Handbook)
+Dex+2
+Halflings are isolated, cheerful people who love the commodity of their homes and communities. That's the main reason most of them don't abandon their birthplaces (shires). However, a strong sense of curiosity inhabits in most of them, leading these little folk to become adventurers or travel to other places. They are extremely agile, but as a result of their short legs, not as fast as the other races
+
+Lightfoot (Player's Handbook)
+Cha+1
+These halflings can easily hide behind anything that is higher than themselves and tend to be more charismatic than the rest from their race.
+
+Stout (Player's Handbook)
+Con+1
+Stout halflings have are similar in a certain way to dwarves. They are stout as their name says and have a resistance to poison.
+
+Half-Orc (Player's Handbook)
+Str+2
+Con+1
+Half orcs have orc blood running through their veins. This makes them much stronger than normal people, as well as hardy. However, that also can make them act impulsively and savagely. They often live, or at least used to in orc tribes and may or may not feel the rage of Gruumsh within them (Gruumsh being the orc god). While many of them triumph as leaders in their tribe due to their high IQ in comparison with the others, others are exiled and go in search of jobs in communities or go adventuring. Their high endurance makes them almost impossible to fall in combat.
+
+Human (Player's Handbook)
+All+1
+Well… I suppose you are a human, so you should know what we are good at. Absolutely nothing! Or more precisely, a bit in everything. Humans are quite more anxious and eager to adventure than the other races due to their short lives (in comparison with the others).
+
+Variant Human (Player's Handbook)
+2 different abilities+1
+Ok, so you actually wanted to be a human that is good at a specific thing? Variant humans get to be a little better at something, while also getting a Feat at lvl1. They aren't any different from the other humans in appearance or attitude, this is just a stats thing.
+
+Tiefling (Player's Handbook)
+Int+1
+Cha+2
+Tieflings take lots of forms and colors. They can have different kinds of horns and tails, as well as be from a great variety of colors. Nevertheless, they share some kind of curse. These are beings of infernal lineage due to a pact that someone in the long past made with Asmodeus (lord of Hell). They look mostly human, not taking into account the features described above. Even though they are mostly intellectual and highly charismatic beings, they tend to be received with mistrust by superstitious people.
+
+The tiefling mentioned above are all connected to Asmodeus. In case you want your tiefling to be connected to another Lord of the 9 Hells, you can choose between these variants:
+
+Baalzebul (Mordenkainen's Tome of Foes)
+Cha+2
+Int+1
+Tieflings connected to this lord can corrupt others both physically and psychically. Diseases and madness come from all who dare to confront them.
+
+Dispater (Mordenkainen's Tome of Foes)
+Cha+2
+Dex+1
+These people are searchers of secrets, as well as great spies and infiltrators. No truth can be hidden from them.
+
+Fierna (Mordenkainen's Tome of Foes)
+Cha+2
+Wis+1
+With their forceful personality, these tieflings act as great manipulators, filled with charm.
+
+Glasya (Mordenkainen's Tome of Foes)
+Cha+2
+Dex+1
+Great at illusions and thievery, as well as excellent at escapes and heists.
+
+Levistus (Mordenkainen's Tome of Foes)
+Cha+2
+Con+1
+Tieflings whose connection is with the ruler from the Frozen Stygia are great both at combat and escape.
+
+Mammon (Mordenkainen's Tome of Foes)
+Cha+2
+Int+1
+These beings are excellent both at gathering and safeguarding wealth, due to their greed.
+
+Mephistopheles (Mordenkainen's Tome of Foes)
+Cha+2
+Int+1
+Great with the arcane arts and the power that comes from wielding them.
+
+Zariel (Mordenkainen's Tome of Foes)
+Cha+2
+Str+1
+Stronger than the other tieflings, believers in strength to rule it all.
+
+Feral (Sword Coast's Adventurers Guide)
+Feral tieflings are a variant from the typical one (the one connected with Asmodeus) but do receive different spells and abilities. These range from spells such as Charm Person or Burning Hands, to have the ability to be winged and fly.

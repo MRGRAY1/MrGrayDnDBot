@@ -296,6 +296,9 @@ async def get_cmd(message, user):
         final = name_gen_m()
     elif (cmd == "b" or cmd == "p" or cmd == "s" or cmd == "boulder" or cmd == "parchment" or cmd == "shears"):
         final = getBPS(cmd, user)
+    elif cmd == "races":
+        await message.channel.send("Races 1:", file=discord.File("Races/Races1.txt"))
+        await message.channel.send("Races 2:", file=discord.File("Races/Races2.txt"))
     elif cmd == "class":
         final = getClass()
     elif (cmd =="barbarian" or cmd == "artificer" or cmd == "bard" or cmd == "cleric" or cmd == "druid" or
