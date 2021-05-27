@@ -2,7 +2,7 @@
 You have spent your life in the service of a temple to a specific god or pantheon of gods.
 You act as an intermediary between the realm of the holy and the mortal world,
 performing sacred rites and offering sacrifices in order to conduct worshipers into the presence of the divine.
-You are not necessarily a cleric—performing sacred rites is not the same thing as channeling divine power. 
+You are not necessarily a cleric-performing sacred rites is not the same thing as channeling divine power. 
 
 -Charlatan
 You have always had a way with people. You know what makes them tick,

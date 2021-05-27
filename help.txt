@@ -38,12 +38,21 @@ Just type . then the class
 .Parchment or .P
 .Shears or .S
 
--Show Background Descriptions
+-Show Background Descriptions*
 .Back
 
 -Generate Character Background
 use number from "Show Background Descriptions" to determine background used
 .BackGen 1-18
+
+-Show list of base Armor
+-Armor
+
+Show list of Base Adventure Gear
+-Gear
+
+-Show list of Base Weapons
+-Weapons
 
 *Credit for descriptions from the following website:
 https://www.tribality.com/2019/01/08/brief-description-of-5e-classes-and-subclasses-ideal-to-show-to-your-players/

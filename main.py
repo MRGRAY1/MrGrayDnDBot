@@ -4,6 +4,9 @@ import re
 import random
 from dotenv import load_dotenv
 
+insults = ["Do better.", "Get Good.", "A newborn baby could follow instructions better.", "Do you talk to your mother with that mouth?", "01110111 01101111 01110111 00101100 00100000 01111001 01101111 01110101 00100000 01100001 01110010 01100101 00100000 01110011 01101111 00100000 01100100 01110101 01101101 01100010", "Meat popsickle.", "Can you not read?", "Your incompetence is staggering.", "You should write a book on how to be wrong.", "Stay in school" ]
+insults2 = ["Does not compute.", "You can't even count that high.", "Stop.", "What are you doing?", "Why do you do this to me?"]
+
 ###Displays help page
 def get_help():
     with open('help.txt', 'r') as file:
@@ -11,17 +14,6 @@ def get_help():
     data = "```\n" + data + "\n```"
     return data
 ###/get_help
-
-#def get_members(message):
-#  #x = server.members
-#  #print('This message will be displayed on the screen.')
-#
-#  with open('members.txt', 'w') as f:
-#    for member in client.guilds.members:
-#      #print('This message will be displayed on the screen.', file=f)
-#      #print(member, file=f) # you'll just #print out Member objects your way.
-#  return 1
-
 
 ####Roll dice that is in a set
 def roll_dice(num_of_dice, dice_type, roll_set):
@@ -31,6 +23,13 @@ def roll_dice(num_of_dice, dice_type, roll_set):
     num_of_dice = int(num_of_dice)
     dice_type = int(dice_type)
     roll_set = int(roll_set)
+    error = "Keep limit of dice to 25. " + insults2[random.randint(0,len(insults2)-1)] + " -Sincerly, Bot"
+    error2 = "That dice is too high. " + insults2[random.randint(0,len(insults2)-1)] + " -Sincerly, Bot"
+
+    if roll_set > 25 or num_of_dice > 25:
+        return error
+    if dice_type > 500:
+        return error2
 
     for i in range(roll_set):
         dice_line = []
@@ -108,11 +107,13 @@ def get_dice(cmd, user):
         dice_type = value[1]
 
     final = roll_dice(num_of_dice, dice_type, roll_set)
-    all_sets += user + " Rolled:"
-    for i in range(len(final)):
-        all_sets += get_total(final[i], drop_low)
-
-    return all_sets
+    if final.isnumeric():
+        all_sets += user + " Rolled:"
+        for i in range(len(final)):
+            all_sets += get_total(final[i], drop_low)
+        return all_sets
+    else:
+        return final
 ####/get_dice
 
 ####Name Gen Male
@@ -303,7 +304,6 @@ async def getBackground(cmd, message):
     return 0
 ###getBackground()
 
-
 ###Acolyte Generator 1
 async def getAcolyte(message):
     stats = "```\nGenerate Acolyte: \n"
@@ -377,14 +377,14 @@ async def getCharlatan(message):
                    "Sarcasm and insults are my weapons of choice.",
                    "I keep multiple holy symbols on me and invoke whatever deity might come in useful at any given moment.",
                    "I pocket anything I see that might have some value"]
-    Ideal = ["Independence. I am a free spirit—no one tells me what to do. (Chaotic)",
-	        "Fairness. I never target people who can't afford to lose a few coins. (Lawful)",
-	        "Charity. I distribute the money I acquire to the people who really need it. (Good)",
-	        "Creativity. I never run the same con twice. (Chaotic)",
-	        "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)",
-	        "Aspiration. I'm determined to make something of myself. (Any)"]
+    Ideal = ["Independence. I am a free spirit-no one tells me what to do. (Chaotic)",
+            "Fairness. I never target people who can't afford to lose a few coins. (Lawful)",
+            "Charity. I distribute the money I acquire to the people who really need it. (Good)",
+            "Creativity. I never run the same con twice. (Chaotic)",
+            "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)",
+            "Aspiration. I'm determined to make something of myself. (Any)"]
     Bond = ["I fleeced the wrong person and must work to ensure that this individual never crosses paths with me or those I care about.",
-            "I owe everything to my mentor—a horrible person who's probably rotting in jail somewhere.",
+            "I owe everything to my mentor-a horrible person who's probably rotting in jail somewhere.",
             "Somewhere out there, I have a child who doesn't know me. I'm making the world better for him or her.",
             "I come from a noble family, and one day I'll reclaim my lands and title from those who stole them from me.",
             "A powerful person killed someone I love. Some day soon, I'll have my revenge.",
@@ -435,7 +435,7 @@ async def getCriminal(message, cmd):
                  "Smuggler"]
     Personality = ["I always have a plan for when things go wrong.",
                    "I am always calm, no matter what the situation. I never raise my voice or let my emotions control me.",
-                   "The first thing I do in a new place is note the locations of everything valuable—or where such things could be hidden.",
+                   "The first thing I do in a new place is note the locations of everything valuable-or where such things could be hidden.",
                    "I would rather make a new friend than a new enemy.",
                    "I am incredibly slow to trust. Those who seem the fairest often have the most to hide.",
                    "I don't pay attention to the risks in a situation. Never tell me the odds.",
@@ -573,7 +573,7 @@ async def getFolkHero(message):
     Ideal = ["Respect. People deserve to be treated with dignity and respect. (Good)",
              "Fairness. No one should get preferential treatment before the law, and no one is above the law. (Lawful)",
              "Freedom. Tyrants must not be allowed to oppress the people. (Chaotic)",
-             "Might. If I become strong, I can take what I want—what I deserve. (Evil)",
+             "Might. If I become strong, I can take what I want-what I deserve. (Evil)",
              "Sincerity. There's no good in pretending to be something I'm not. (Neutral)",
              "Destiny. Nothing and no one can steer me away from my higher calling. (Any)"]
     Bond = ["I have a family, but I have no idea where they are. One day, I hope to see them again.",
@@ -642,7 +642,7 @@ async def getGuildArtisan(message, cmd):
                       "Wagon-makers and wheelwrights",
                       "Weavers and dyers",
                       "Woodcarvers, coopers, and bowyers"]
-    Personality = ["I believe that anything worth doing is worth doing right. I can't help it—I'm a perfectionist.",
+    Personality = ["I believe that anything worth doing is worth doing right. I can't help it-I'm a perfectionist.",
                    "I'm a snob who looks down on those who can't appreciate fine art.",
                    "I always want to know how things work and what makes people tick.",
                    "I'm full of witty aphorisms and have a proverb for every occasion.",
@@ -665,7 +665,7 @@ async def getGuildArtisan(message, cmd):
     Flaw = ["I'll do anything to get my hands on something rare or priceless.",
             "I'm quick to assume that someone is trying to cheat me.",
             "No one must ever learn that I once stole money from guild coffers.",
-            "I'm never satisfied with what I have—I always want more.",
+            "I'm never satisfied with what I have-I always want more.",
             "I would kill to acquire a noble title.",
             "I'm horribly jealous of anyone who can outshine my handiwork. Everywhere I go, I'm surrounded by rivals."]
 
@@ -878,7 +878,7 @@ async def getSage(message):
                  "Wizard's apprentice",
                  "Scribe"]
     Personality = ["I use polysyllabic words that convey the impression of great erudition.",
-                   "I've read every book in the world's greatest libraries—or I like to boast that I have.",
+                   "I've read every book in the world's greatest libraries-or I like to boast that I have.",
                    "I'm used to helping out those who aren't as smart as I am, and I patiently explain anything and everything to others.",
                    "There's nothing I like more than a good mystery.",
                    "I'm willing to listen to every side of an argument before I make my own judgment.",
@@ -942,12 +942,12 @@ async def getSailor(message, cmd):
                       "I like a job well done, especially if I can convince someone else to do it."]
     Ideal = ["Respect. The thing that keeps a ship together is mutual respect between captain and crew. (Good)",
              "Fairness. We all do the work, so we all share in the rewards. (Lawful)",
-             "Freedom. The sea is freedom—the freedom to go anywhere and do anything. (Chaotic)",
+             "Freedom. The sea is freedom-the freedom to go anywhere and do anything. (Chaotic)",
              "Mastery. I'm a predator, and the other ships on the sea are my prey. (Evil)",
              "People. I'm committed to my crewmates, not to ideals. (Neutral)",
              "Aspiration. Someday, I'll own my own ship and chart my own destiny. (Any)"]
     Bond = ["I'm loyal to my captain first, everything else second.",
-            "The ship is most important—crewmates and captains come and go.",
+            "The ship is most important-crewmates and captains come and go.",
             "I'll always remember my first ship.",
             "In a harbor town, I have a paramour whose eyes nearly stole me from the sea.",
             "I was cheated out of my fair share of the profits, and I want to get my due.",
@@ -1012,7 +1012,7 @@ async def getSoldier(message):
             "I fight for those who cannot fight for themselves."]
     Flaw = ["The monstrous enemy we faced in battle still leaves me quivering with fear.",
             "I have little respect for anyone who is not a proven warrior.",
-            "I made a terrible mistake in battle that cost many lives—and I would do anything to keep that mistake secret.",
+            "I made a terrible mistake in battle that cost many lives-and I would do anything to keep that mistake secret.",
             "My hatred of my enemies is blinding and unreasoning.",
             "I obey the law, even if the law causes misery.",
             "I'd rather eat my armor than admit when I'm wrong."]
@@ -1052,7 +1052,7 @@ async def getUrchin(message):
              "Community. We have to take care of each other, because no one else is going to do it. (Lawful)",
              "Change. The low are lifted up, and the high and mighty are brought down. Change is the nature of things. (Chaotic)",
              "Retribution. The rich need to be shown what life and death are like in the gutters. (Evil)",
-             "People. I help the people who help me—that's what keeps us alive. (Neutral)",
+             "People. I help the people who help me-that's what keeps us alive. (Neutral)",
              "Aspiration. I'm going to prove that I'm worthy of a better life. (Any)"]
     Bond = ["My town or city is my home, and I'll fight to defend it.",
             "I sponsor an orphanage to keep others from enduring what I was forced to endure.",
@@ -1079,12 +1079,13 @@ async def getUrchin(message):
     await message.channel.send(stats)
 ###getUrchin()
 
-
 #### Main get command function
 async def get_cmd(message, user):
     cmd = message.content.lower().replace(".", "")
     final = ""
-    error1 = "Unknown input. Do better. -Bot"
+    error1 = "Unknown input. "
+    insult = insults[random.randint(0,len(insults)-1)]
+    error1 += insult + " -Sincerly, Bot"
     fail = False
     
     if len(cmd) < 1:
@@ -1126,6 +1127,14 @@ async def get_cmd(message, user):
         backgrounds += "7.  Folk Hero \n8.  Guild Artisan \n9.  Merchant \n10. Hermit \n11. Noble \n12. Knight \n13. Outlander \n"
         backgrounds += "14. Sage \n15. Sailor \n16. Pirate \n17. Soldier \n18. Urchin" + "\n```"
         await message.channel.send(backgrounds)
+    elif cmd == "weapons":
+        await message.channel.send("Weapons 1:", file=discord.File("Items/Weapons1.txt"))
+        await message.channel.send("Weapons 2:", file=discord.File("Items/Weapons2.txt"))
+    elif cmd == "armor":
+        await message.channel.send("Armor:", file=discord.File("Items/Armor.txt"))
+    elif cmd == "gear":
+        await message.channel.send("Adventure Gear 1:", file=discord.File("Items/AdvGear1.txt"))
+        await message.channel.send("Adventure Gear 2:", file=discord.File("Items/AdvGear2.txt"))
     elif cmd == "biteme":
         await message.channel.send("Bite My Shiny Metal Ass -Bot")
     else:
@@ -1146,7 +1155,9 @@ async def on_ready():
 
 @client.event
 async def on_message(message):
-    user = message.author.name
+    user = message.author.nick
+    if user == None:
+        user = message.author.name
     if message.author == client.user:
         return
     elif message.content.startswith("."):
