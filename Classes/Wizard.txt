@@ -43,7 +43,7 @@ Bladesinger (Sword Coast's Adventurers Guide) *Elves and half-elves only (unless
 Bladesingers are wizards trained in a specific elven way of combat and wizardry.
 They are taught the bladesong, a sort of elven magic that allows them to enter a trance during combat, making them faster and harder to hit.
 
-Order of Scribes (Tasha’s Cauldron of Everything)
+Order of Scribes (Tasha's Cauldron of Everything)
 Wizards from the order of the scribes are the most wizardly wizard from the bunch. They are characters that are always writing with their magic quill in their spellbook and scrolls.
 The spellbook also becomes sentient through their magic, becoming intangible and behaving in a similar manner to a familiar.
 Being this great at writers, these wizards can also create spell scrolls that only they can read to use throughout the day,
