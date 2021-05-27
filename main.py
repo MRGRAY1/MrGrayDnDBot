@@ -1068,6 +1068,30 @@ async def getUrchin(message):
     await message.channel.send(stats)
 ###getUrchin()
 
+###Show Base Weapons
+def getWeapons():
+    with open('Items/Weapons.txt', 'r') as file:
+        data = file.read()
+    data = "```\n" + data + "\n```"
+    return data
+###getWeapons()
+
+###Show Base Armor
+def getArmor():
+    with open('Items/Armor.txt', 'r') as file:
+        data = file.read()
+    data = "```\n" + data + "\n```"
+    return data
+###getArmor()
+
+###Show base adventure gear
+def getGear():
+    with open('Items/AdvGear.txt', 'r') as file:
+        data = file.read()
+    data = "```\n" + data + "\n```"
+    return data
+###getGear()
+
 
 #### Main get command function
 async def get_cmd(message, user):
@@ -1115,6 +1139,12 @@ async def get_cmd(message, user):
         backgrounds += "7.  Folk Hero \n8.  Guild Artisan \n9.  Merchant \n10. Hermit \n11. Noble \n12. Knight \n13. Outlander \n"
         backgrounds += "14. Sage \n15. Sailor \n16. Pirate \n17. Soldier \n18. Urchin" + "\n```"
         await message.channel.send(backgrounds)
+    elif cmd == "weapons":
+        final = getWeapons()
+    elif cmd == "armor":
+        final = getArmor()
+    elif cmd == "gear":
+        final = getGear()
     elif cmd == "biteme":
         await message.channel.send("Bite My Shiny Metal Ass -Bot")
     else:
