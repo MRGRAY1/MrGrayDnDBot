@@ -4,6 +4,8 @@ import re
 import random
 from dotenv import load_dotenv
 
+insults = ["Do better.", "Get Good.", "A newborn baby could follow instructions better.", "Do you talk to your mother with that mouth?", "01110111 01101111 01110111 00101100 00100000 01111001 01101111 01110101 00100000 01100001 01110010 01100101 00100000 01110011 01101111 00100000 01100100 01110101 01101101 01100010", "Meat popsickle.", "Can you not read?", "Your incompetence is staggering.", "You should write a book on how to be wrong.", "Stay in school" ]
+
 ###Displays help page
 def get_help():
     with open('help.txt', 'r') as file:
@@ -292,7 +294,6 @@ async def getBackground(cmd, message):
     return 0
 ###getBackground()
 
-
 ###Acolyte Generator 1
 async def getAcolyte(message):
     stats = "```\nGenerate Acolyte: \n"
@@ -367,11 +368,11 @@ async def getCharlatan(message):
                    "I keep multiple holy symbols on me and invoke whatever deity might come in useful at any given moment.",
                    "I pocket anything I see that might have some value"]
     Ideal = ["Independence. I am a free spirit-no one tells me what to do. (Chaotic)",
-	        "Fairness. I never target people who can't afford to lose a few coins. (Lawful)",
-	        "Charity. I distribute the money I acquire to the people who really need it. (Good)",
-	        "Creativity. I never run the same con twice. (Chaotic)",
-	        "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)",
-	        "Aspiration. I'm determined to make something of myself. (Any)"]
+            "Fairness. I never target people who can't afford to lose a few coins. (Lawful)",
+            "Charity. I distribute the money I acquire to the people who really need it. (Good)",
+            "Creativity. I never run the same con twice. (Chaotic)",
+            "Friendship. Material goods come and go. Bonds of friendship last forever. (Good)",
+            "Aspiration. I'm determined to make something of myself. (Any)"]
     Bond = ["I fleeced the wrong person and must work to ensure that this individual never crosses paths with me or those I care about.",
             "I owe everything to my mentor-a horrible person who's probably rotting in jail somewhere.",
             "Somewhere out there, I have a child who doesn't know me. I'm making the world better for him or her.",
@@ -1068,36 +1069,13 @@ async def getUrchin(message):
     await message.channel.send(stats)
 ###getUrchin()
 
-###Show Base Weapons
-def getWeapons():
-    with open('Items/Weapons.txt', 'r') as file:
-        data = file.read()
-    data = "```\n" + data + "\n```"
-    return data
-###getWeapons()
-
-###Show Base Armor
-def getArmor():
-    with open('Items/Armor.txt', 'r') as file:
-        data = file.read()
-    data = "```\n" + data + "\n```"
-    return data
-###getArmor()
-
-###Show base adventure gear
-def getGear():
-    with open('Items/AdvGear.txt', 'r') as file:
-        data = file.read()
-    data = "```\n" + data + "\n```"
-    return data
-###getGear()
-
-
 #### Main get command function
 async def get_cmd(message, user):
     cmd = message.content.lower().replace(".", "")
     final = ""
-    error1 = "Unknown input. Do better. -Bot"
+    error1 = "Unknown input. "
+    insult = insults[random.randint(0,len(insults)-1)]
+    error1 += insult + " -bot"
     fail = False
     
     if len(cmd) < 1:
@@ -1140,11 +1118,13 @@ async def get_cmd(message, user):
         backgrounds += "14. Sage \n15. Sailor \n16. Pirate \n17. Soldier \n18. Urchin" + "\n```"
         await message.channel.send(backgrounds)
     elif cmd == "weapons":
-        final = getWeapons()
+        await message.channel.send("Weapons 1:", file=discord.File("Items/Weapons1.txt"))
+        await message.channel.send("Weapons 2:", file=discord.File("Items/Weapons2.txt"))
     elif cmd == "armor":
-        final = getArmor()
+        await message.channel.send("Armor:", file=discord.File("Items/Armor.txt"))
     elif cmd == "gear":
-        final = getGear()
+        await message.channel.send("Adventure Gear 1:", file=discord.File("Items/AdvGear1.txt"))
+        await message.channel.send("Adventure Gear 2:", file=discord.File("Items/AdvGear2.txt"))
     elif cmd == "biteme":
         await message.channel.send("Bite My Shiny Metal Ass -Bot")
     else:
