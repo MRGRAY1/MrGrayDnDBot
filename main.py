@@ -5,6 +5,7 @@ import random
 from dotenv import load_dotenv
 
 insults = ["Do better.", "Get Good.", "A newborn baby could follow instructions better.", "Do you talk to your mother with that mouth?", "01110111 01101111 01110111 00101100 00100000 01111001 01101111 01110101 00100000 01100001 01110010 01100101 00100000 01110011 01101111 00100000 01100100 01110101 01101101 01100010", "Meat popsickle.", "Can you not read?", "Your incompetence is staggering.", "You should write a book on how to be wrong.", "Stay in school" ]
+insults2 = ["Does not compute.", "You can't even count that high.", "Stop.", "What are you doing?", "Why do you do this to me?"]
 
 ###Displays help page
 def get_help():
@@ -22,6 +23,13 @@ def roll_dice(num_of_dice, dice_type, roll_set):
     num_of_dice = int(num_of_dice)
     dice_type = int(dice_type)
     roll_set = int(roll_set)
+    error = "Keep limit of dice to 25. " + insults2[random.randint(0,len(insults2)-1)] + " -Sincerly, Bot"
+    error2 = "That dice is too high. " + insults2[random.randint(0,len(insults2)-1)] + " -Sincerly, Bot"
+
+    if roll_set > 25 or num_of_dice > 25:
+        return error
+    if dice_type > 500:
+        return error2
 
     for i in range(roll_set):
         dice_line = []
@@ -99,11 +107,13 @@ def get_dice(cmd, user):
         dice_type = value[1]
 
     final = roll_dice(num_of_dice, dice_type, roll_set)
-    all_sets += user + " Rolled:"
-    for i in range(len(final)):
-        all_sets += get_total(final[i], drop_low)
-
-    return all_sets
+    if final.isnumeric():
+        all_sets += user + " Rolled:"
+        for i in range(len(final)):
+            all_sets += get_total(final[i], drop_low)
+        return all_sets
+    else:
+        return final
 ####/get_dice
 
 ####Name Gen Male
@@ -1075,7 +1085,7 @@ async def get_cmd(message, user):
     final = ""
     error1 = "Unknown input. "
     insult = insults[random.randint(0,len(insults)-1)]
-    error1 += insult + " -bot"
+    error1 += insult + " -Sincerly, Bot"
     fail = False
     
     if len(cmd) < 1:
